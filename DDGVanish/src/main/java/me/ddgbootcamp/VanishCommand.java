@@ -1,25 +1,18 @@
 package me.ddgbootcamp;
 
 import me.ddgbootcamp.utils.Utils;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
-import org.bukkit.boss.BarFlag;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_13_R2.boss.CraftBossBar;
 import org.bukkit.entity.Bat;
-import org.bukkit.entity.Boss;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import java.util.List;
 
 import static me.ddgbootcamp.main.VanishList;
 
@@ -78,6 +71,7 @@ public class VanishCommand implements CommandExecutor {
                 player.setCollidable(true);      //Speler is weer te duwen
                 return true;
             }
+
             //Vanishen van de speler als de speler niet vanished is
             else if (!VanishList.contains(player)){
                 for (Player online : Bukkit.getServer().getOnlinePlayers()){

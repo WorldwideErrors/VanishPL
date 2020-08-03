@@ -7,5 +7,4 @@ description: Dit is een plugin waarbij je jezelf onzichtbaar kan maken voor ande
 commands:
   vanish:
     aliases: [v]
-    usage: /vanish
     description: Met dit commando kan jij jezelf onzichtbaar maken voor je medespelers!
