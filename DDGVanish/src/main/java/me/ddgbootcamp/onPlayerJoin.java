@@ -13,7 +13,9 @@ public class onPlayerJoin implements Listener {
     @EventHandler
     public void PlayerJoin(PlayerJoinEvent e){
         Player join = e.getPlayer();
+        //Alle online spelers ophalen
         for (Player online : Bukkit.getServer().getOnlinePlayers()){
+            //Alle online spelers die in de vanishlist staan hiden
             if (VanishList.contains(online)){
                 join.hidePlayer(online);
             }
