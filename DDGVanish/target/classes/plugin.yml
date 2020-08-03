@@ -1,0 +1,9 @@
+name: DDGVanish
+version: 1.0-SNAPSHOT
+main: me.ddgbootcamp.main
+api-version: 1.13
+authors: [Zhyrapian]
+description: Dit is een plugin waarbij je jezelf onzichtbaar kan maken voor andere mensen.
+commands:
+  vanish:
+    aliases: [v]
