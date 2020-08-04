@@ -41,7 +41,6 @@ public class VanishCommand implements CommandExecutor {
                 for (Player online : Bukkit.getServer().getOnlinePlayers()){
                     online.showPlayer(player); //Maak de speler weer zichtbaar voor alle spelers
                     VanishList.remove(player); //Gooi de speler uit de lijst met vanished-spelers
-                    //Spawn de particles voor alle spelers die online zijn.
                     online.spawnParticle(Particle.REDSTONE,playerlocation,250,0.5,0,0.5,
                             new Particle.DustOptions(Color.fromBGR(0,21,174),1));
                 }
@@ -79,7 +78,6 @@ public class VanishCommand implements CommandExecutor {
                 for (Player online : Bukkit.getServer().getOnlinePlayers()){
                     online.hidePlayer(player);   //Maak de speler onzichtbaar voor alle spelers
                     VanishList.add(player);      //Gooi de speler in de lijst met vanished-spelers
-                    //speler gaat op in rook particles
                     online.spawnParticle(Particle.CLOUD, playerlocation,250,0.1,-1,0.1,0.00005);
                 }
                 player.sendMessage(Utils.chat("&c[DDG BC] &7Je bent van de radar verdwenen!"));  //Speler duidelijk maken dat hij onzichtbaar is

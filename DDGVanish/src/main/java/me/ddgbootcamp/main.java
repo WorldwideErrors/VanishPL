@@ -11,14 +11,12 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         getCommand("vanish").setExecutor(new VanishCommand());
         getServer().getPluginManager().registerEvents(new onPlayerJoin(),this);
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
         VanishList.clear();
     }
 }
