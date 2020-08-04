@@ -9,6 +9,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Bat;
+import org.bukkit.entity.Bat;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -51,6 +52,7 @@ public class VanishCommand implements CommandExecutor {
                 Bat bat3 = (Bat)spawnloc3.getWorld().spawnEntity(spawnloc3, EntityType.BAT);
                 Bat bat4 = (Bat)spawnloc4.getWorld().spawnEntity(spawnloc4, EntityType.BAT);
                 Bat bat5 = (Bat)spawnloc5.getWorld().spawnEntity(spawnloc5, EntityType.BAT);
+                
 
                 //Delayed event, zodat de bats na een tijd weer dood gaan.
                 new BukkitRunnable(){
@@ -77,6 +79,8 @@ public class VanishCommand implements CommandExecutor {
                 for (Player online : Bukkit.getServer().getOnlinePlayers()){
                     online.hidePlayer(player);   //Maak de speler onzichtbaar voor alle spelers
                     VanishList.add(player);      //Gooi de speler in de lijst met vanished-spelers
+                    //speler gaat op in rook particles
+                    online.spawnParticle(Particle.CLOUD, playerlocation,250,0.1,-1,0.1,0.00005);
                 }
                 player.sendMessage(Utils.chat("&c[DDG BC] &7Je bent van de radar verdwenen!"));  //Speler duidelijk maken dat hij onzichtbaar is
                 player.setCollidable(false);    //Speler is niet meer te duwen
